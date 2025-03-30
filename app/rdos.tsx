@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function MissionInfos() {
+export default function Rdos() {
     return (
         <View>
-            <Text>Mission informations</Text>
+            <Text>RDO reports</Text>
         </View>
     );
 }

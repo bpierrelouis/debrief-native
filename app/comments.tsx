@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
 
-export default function MissionInfos() {
+export default function Comments() {
     return (
         <View>
-            <Text>Mission informations</Text>
+            <Text>Comments</Text>
         </View>
     );
 }
