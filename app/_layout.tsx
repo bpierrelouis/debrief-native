@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/sidebar/sidebar";
 import { Stack } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -8,9 +8,10 @@ export default function Layout() {
         <SafeAreaProvider>
             <SafeAreaView style={styles.container}>
                 <Sidebar />
-                <View style={styles.content}>
-                    <Stack screenOptions={{ headerShown: false }} />
-                </View>
+                <Stack screenOptions={{
+                    headerShown: false,
+                    contentStyle: styles.content
+                }} />
             </SafeAreaView>
         </SafeAreaProvider>
     );
@@ -20,9 +21,10 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "row",
-        height: "100%"
+        height: "100%",
     },
     content: {
-        flex: 1
+        flex: 1,
+        backgroundColor: "#fff",
     },
 });
