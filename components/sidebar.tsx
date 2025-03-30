@@ -1,25 +1,27 @@
-import { StyleSheet, Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import NavLinks from "./sidebar-navlinks";
 
 export default function Sidebar() {
     return (
-        <SafeAreaView style={styles.sidebar}>
-            <NavLinks />
-            <Text style={styles.title}>Legs</Text>
-        </SafeAreaView>
+        <View style={styles.container}>
+            <ScrollView contentContainerStyle={styles.scrollView}>
+                <NavLinks />
+                <Text style={styles.title}>Legs</Text>
+            </ScrollView>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
-    sidebar: {
+    container: {
         width: 200,
-        backgroundColor: "#ddd",
-        height: "100%",
         paddingVertical: 10,
         paddingHorizontal: 5,
+        borderRightWidth: StyleSheet.hairlineWidth,
+        borderColor: "#ddd"
+    },
+    scrollView: {
         gap: 3,
-        overflowY: "auto",
     },
     title: {
         fontSize: 16,
